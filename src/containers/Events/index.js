@@ -7,16 +7,24 @@ import ModalEvent from "../ModalEvent";
 
 import "./style.css";
 
-const PER_PAGE = 9;
+const PER_PAGE = 9; // Nombre de Carte par page
 
 const EventList = () => {
   const { data, error } = useData();
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
+
+  console.log("===");
+  console.log(data);
+  console.log("+++");
+  console.log(type);
+  console.log("===");
+  console.log(currentPage);
+
   const filteredEvents = (
     (!type
       ? data?.events
-      : data?.events) || []
+      : data?.events.filter((filterType) => filterType.type === type)) || []
   ).filter((event, index) => {
     if (
       (currentPage - 1) * PER_PAGE <= index &&
@@ -26,6 +34,8 @@ const EventList = () => {
     }
     return false;
   });
+
+  console.log(filteredEvents); // Renvoie le même Array au changement de filtre
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
