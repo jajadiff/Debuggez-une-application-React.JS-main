@@ -14,12 +14,12 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  console.log("===");
-  console.log(data);
-  console.log("+++");
-  console.log(type);
-  console.log("===");
-  console.log(currentPage);
+  // console.log("===");
+  // console.log(data);
+  // console.log("+++");
+  // console.log(type);
+  // console.log("===");
+  // console.log(currentPage);
 
   const filteredEvents = (
     (!type
@@ -35,7 +35,7 @@ const EventList = () => {
     return false;
   });
 
-  console.log(filteredEvents); // Renvoie le même Array au changement de filtre
+  // console.log(filteredEvents); // Renvoie le même Array au changement de filtre
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType);
