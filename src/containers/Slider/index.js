@@ -10,11 +10,11 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? 1 : -1
   );
-  console.log("====");
-  console.log(data);
-  console.log("++++");
-  console.log(byDateDesc);
-  console.log(byDateDesc.length);
+  // console.log("====");
+  // console.log(data);
+  // console.log("++++");
+  // console.log(byDateDesc);
+  // console.log(byDateDesc.length);
 
   const nextCard = () => {
     setTimeout(
@@ -51,7 +51,7 @@ const Slider = () => {
                   key={`${event.id}`}
                   type="radio"
                   name="radio-button"
-                  checked={idx === radioIdx}
+                  checked={index === radioIdx}
                 />
               ))}
             </div>
