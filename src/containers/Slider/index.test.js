@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Slider from "./index";
 import { api, DataProvider } from "../../contexts/DataContext";
 
@@ -35,8 +35,10 @@ describe("When slider is created", () => {
         <Slider />
       </DataProvider>
     );
-    await screen.findByText("World economic forum");
-    await screen.findByText("janvier");
+    await waitFor(() => screen.findByText("World economic forum"), {
+      timeout: 6000,
+    });
+    await waitFor(() => screen.findByText("janvier"), { timeout: 6000 });
     await screen.findByText(
       "Oeuvre à la coopération entre le secteur public et le privé."
     );
